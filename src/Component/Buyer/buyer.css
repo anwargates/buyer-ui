@@ -1,3 +1,17 @@
+
+
+
+
+/* carousel */
+.hero{
+    width: 600px;
+}
+
+.carousel-inner{
+    border-radius: 1rem;
+}
+
+
 @media (max-width: 360px) {
     body {
         font-family: "Poppins", sans-serif;

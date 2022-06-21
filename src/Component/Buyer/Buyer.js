@@ -29,13 +29,13 @@ const Buyer = () => {
                 {/* <a href=""><img src="img/fi_arrow-left.png" alt=""></a> */}
             </div>
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row contain">
+                    <div class="col-md-12 g-4">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-8 g-4">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <header class="hero">
+                                    <div class="col-md-12 alignment-0">
+                                        <div class="hero">
                                             <Carousel>
                                                 <Carousel.Item>
                                                     <img
@@ -97,40 +97,29 @@ const Buyer = () => {
                                                 </div>
                                             </div> */}
 
-                                        </header>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row desc">
-                                            <h1>Deskripsi</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Exercitationem cupiditate excepturi assumenda ipsum molestias, aut, odit quod
-                                                quibusdam quos consequuntur libero incidunt impedit, nam possimus explicabo totam quam qui tempore.
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="row">
+                            <div class="col-md-4 g-4">
+                                <div class="row gy-4">
                                     <div class="col-md-12">
                                         <div class="row harga">
                                             <h1>Jam Tangan Casio</h1>
                                             <h3>Aksesoris</h3>
                                             <h4 class="price">Rp 250.000</h4>
+                                            <Button
+                                                disabled={disable}
+                                                className='button shadow-none button-disable'
+                                                onClick={() => setShow(true)}>
+                                                <p className='btn-text'>{buttonText}</p>
+                                            </Button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-12">
                                         <div class="row seller">
                                             <div class="col-4 profile">
-                                                <Link to="/"><img class="d-block w-100" src="/img/profile.png" alt="" /></Link>
+                                                <Link to="/"><img class="" src="/img/profile.png" alt="" /></Link>
                                                 {/* <img src="/img/profile.png" alt=""> */}
                                             </div>
                                             <div class="col-8 seller-name">
@@ -141,29 +130,24 @@ const Buyer = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-8 g-4">
+                                <div class="row desc">
+                                    <h1>Deskripsi</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                        culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Exercitationem cupiditate excepturi assumenda ipsum molestias, aut, odit quod
+                                        quibusdam quos consequuntur libero incidunt impedit, nam possimus explicabo totam quam qui tempore.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
-
-
-            {/* <div className="container menu">
-                <div className="col-xs-12">
-                    
-                    
-
-
-                </div>
-            </div> */}
-
-            <Button
-                disabled={disable}
-                className='button shadow-none button-disable'
-                onClick={() => setShow(true)}>
-                {buttonText}
-            </Button>
-
-            <Modal
+                <Modal
                 show={show}
                 onHide={() => setShow(false)}
                 dialogClassName="modal-90w"
@@ -225,47 +209,16 @@ const Buyer = () => {
 
                 </Modal.Body>
             </Modal>
+            </div>
 
 
-            {/* <div class="modal fade modal-dialog" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                <Link to="/"><img src="img/close.png" alt="" /></Link>
-                                <img src="img/close.png" alt="">
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Modal body text goes here.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+
+
+            
         </>
 
     )
 }
-
-// function AlertDismissibleExample() {
-
-//     if (show) {
-//         return (
-//             <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-//                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-//                 <p>
-//                     Change this and that and try again. Duis mollis, est non commodo
-//                     luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-//                     Cras mattis consectetur purus sit amet fermentum.
-//                 </p>
-//             </Alert>
-//         );
-//     }
-//     // return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-// }
 
 
 export default Buyer

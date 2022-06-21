@@ -34,7 +34,7 @@ const Buyer = () => {
                         <div class="row">
                             <div class="col-md-8 g-4">
                                 <div class="row">
-                                    <div class="col-md-12 alignment-0">
+                                    <div class="col-md-8 alignment-0">
                                         <div class="hero">
                                             <Carousel>
                                                 <Carousel.Item>
@@ -43,10 +43,6 @@ const Buyer = () => {
                                                         src="/img/product.png"
                                                         alt="First slide"
                                                     />
-                                                    <Carousel.Caption>
-                                                        <h3>First slide label</h3>
-                                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                                    </Carousel.Caption>
                                                 </Carousel.Item>
                                                 <Carousel.Item>
                                                     <img
@@ -54,11 +50,6 @@ const Buyer = () => {
                                                         src="/img/product.png"
                                                         alt="Second slide"
                                                     />
-
-                                                    <Carousel.Caption>
-                                                        <h3>Second slide label</h3>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                    </Carousel.Caption>
                                                 </Carousel.Item>
                                                 <Carousel.Item>
                                                     <img
@@ -66,11 +57,13 @@ const Buyer = () => {
                                                         src="/img/product.png"
                                                         alt="Third slide"
                                                     />
-
-                                                    <Carousel.Caption>
-                                                        <h3>Third slide label</h3>
-                                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                                    </Carousel.Caption>
+                                                </Carousel.Item>
+                                                <Carousel.Item>
+                                                    <img
+                                                        className="d-block w-100"
+                                                        src="/img/product.png"
+                                                        alt="Third slide"
+                                                    />
                                                 </Carousel.Item>
                                             </Carousel>
 
@@ -160,7 +153,7 @@ const Buyer = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className="col-xs-12">
-                        <div className="row desc row-modal">
+                        <div className="row-modal">
                             <h1>
                                 Masukkan Harga Tawarmu
                             </h1>
@@ -168,17 +161,17 @@ const Buyer = () => {
                                 Harga tawaranmu akan diketahui penual, jika penjual cocok kamu akan segera dihubungi penjual.
                             </p>
                         </div>
-                        <div className="row seller row-modal-item">
+                        <div className="row-modal-item">
 
                             <div class="col-4 profile">
-                                <Link to="/"><img class="d-block w-100 pic" src="/img/hero.png" alt="" /></Link>
+                                <Link to="/"><img class="" src="/img/hero.png" alt="" /></Link>
                             </div>
                             <div class="col-8 seller-name">
                                 <h1>Jam Tangan Casio</h1>
                                 <h4 class="price">Rp 250.000</h4>
                             </div>
                         </div>
-                        <div className="row input-harga">
+                        <div className="input-harga">
                             <h3>
                                 Harga Tawar
                             </h3>

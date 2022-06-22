@@ -516,9 +516,23 @@ body {
   }
 
   /* modal */
+  .modal{
+    /* display: flex!important; */
+    bottom: -150vh;
+    transition: all .3s ease-in-out;
+    top: auto!important; /*essential*/
+  }
+  .modal.show{
+    /* display: flex!important; */
+    /* flex-direction: column;
+    justify-content: flex-end; */
+    /* top: auto; */
+    bottom: -50vh!important; 
+  }
   .modal-dialog{
+    top: auto;
     margin: 0;
-    bottom: 0;
+    /* bottom: 0; */
     position: fixed;
     max-width: 100%;
   }

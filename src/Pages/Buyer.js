@@ -132,7 +132,7 @@ const Buyer = () => {
                                     Masukkan Harga Tawarmu
                                 </h1>
                                 <p>
-                                    Harga tawaranmu akan diketahui penual, jika penjual cocok kamu akan segera dihubungi penjual.
+                                    Harga tawaranmu akan diketahui penjual, jika penjual cocok kamu akan segera dihubungi penjual.
                                 </p>
                             </div>
                             <div className="row-modal-item">

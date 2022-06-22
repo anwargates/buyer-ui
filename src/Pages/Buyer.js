@@ -24,13 +24,13 @@ const Buyer = () => {
                     Harga tawarmu berhasil dikirim ke penjual
                 </p>
             </Alert>
-            <div class="nav">
+            <div class="back-nav">
                 <Link to="/"><img src="/img/fi_arrow-left.png" alt="" /></Link>
                 {/* <a href=""><img src="img/fi_arrow-left.png" alt=""></a> */}
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-md-8 col-lg-8 g-4">
+                    <div class="col-sm-12 col-md-8 col-lg-8 g-4 carousel-mobile">
                         <Carousel>
                             <Carousel.Item>
                                 <img
@@ -62,8 +62,8 @@ const Buyer = () => {
                             </Carousel.Item>
                         </Carousel>
                     </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4 g-4">
-                        <div class="row gy-4">
+                    <div class="col-sm-12 col-md-4 col-lg-4 g-4 harga-mobile">
+                        <div class="row gy-4 alignment-mobile">
                             <div class="col-12">
                                 <div class="row harga">
                                     <h1>Jam Tangan Casio</h1>
@@ -91,7 +91,7 @@ const Buyer = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-8 col-lg-8 g-4">
+                    <div class="col-sm-12 col-md-8 col-lg-8 g-4 desc-mobile">
                         <div class="row desc">
                             <h1>Deskripsi</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -159,13 +159,14 @@ const Buyer = () => {
                                     prefix='Rp. '
                                     onValueChange={(value, name) => console.log(value, name)}
                                 />
+                                <Button className='button shadow-none button-kirim' onClick={
+                                    () => { setShow(false); setAlertShow(true); setDisable(true) }
+                                }
+                                >
+                                    <div className="btn-text">Kirim</div>
+                                </Button>
                             </div>
-                            <Button className='button shadow-none button-kirim' onClick={
-                                () => { setShow(false); setAlertShow(true); setDisable(true) }
-                            }
-                            >
-                                Kirim
-                            </Button>
+
 
                             {/* <div className="button button-kirim">
                             <Button onClick={AlertDismissibleExample}>

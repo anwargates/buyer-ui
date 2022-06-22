@@ -20,6 +20,12 @@ nav li {
   
 }
 
+@media (max-width:768px) {
+  nav{
+    display: none;
+  }
+}
+
 /* #nav {
   background: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);

@@ -6,6 +6,10 @@ body {
   max-width: 968px;
 }
 
+.back-nav {
+  display: none;
+}
+
 .harga {
   /* width: 336px; */
   padding: 1rem 0.5rem;
@@ -95,7 +99,7 @@ body {
   padding: 0;
 }
 
-.button {
+.harga .button {
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -112,19 +116,19 @@ body {
   justify-content: center;
 }
 
-.button:hover {
+.harga .button:hover {
   color: #fff;
   background-color: #7f3bbf;
   border: none;
 }
 
-.button:focus {
+.harga .button:focus {
   color: #fff;
   background-color: #7f3bbf;
   border: none;
 }
 
-.btn-primary:disabled {
+.harga .button:disabled {
   color: #fff;
   background-color: #d0d0d0;
   border-color: #d0d0d0;
@@ -138,6 +142,7 @@ body {
   line-height: 20px;
   text-align: center;
   margin: auto;
+  white-space: nowrap;
 }
 
 .seller {
@@ -181,10 +186,6 @@ body {
 }
 
 /* carousel */
-.hero {
-  width: 600px;
-}
-
 .carousel-inner {
   border-radius: 1rem;
 }
@@ -249,7 +250,7 @@ body {
 }
 
 .modal-body {
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 .row-modal h1 {
@@ -275,7 +276,7 @@ body {
   flex-wrap: wrap;
   padding: 16px;
   gap: 10px;
-  width: 296px;
+  width: 100%;
   height: 80px;
   background: #eeeeee;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
@@ -316,16 +317,16 @@ body {
   padding: 12px 16px;
   gap: 16px;
 
-  width: 296px;
+  width: 100%;
   height: 48px;
 
   background: #ffffff;
+  opacity: 0.5;
 
   border: 1px solid #d0d0d0;
   border-radius: 16px;
 
   flex: none;
-  order: 1;
   align-self: stretch;
   flex-grow: 0;
 }
@@ -339,6 +340,38 @@ body {
   color: #000000;
 }
 
+.input-harga .button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+  position: relative;
+  width: 296px;
+  height: 48px;
+  background: #7126b5;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+}
+
+.input-harga .button:hover {
+  color: #fff;
+  background-color: #7f3bbf;
+  border: none;
+}
+
+.input-harga .button:focus {
+  color: #fff;
+  background-color: #7f3bbf;
+  border: none;
+}
+
+.input-harga .button:disabled {
+  color: #fff;
+  background-color: #d0d0d0;
+  border-color: #d0d0d0;
+  opacity: 1;
+}
 
 /* alert */
 .cust-alert {
@@ -384,17 +417,67 @@ body {
 /* mobile */
 
 @media (max-width: 768px) {
-  .button {
+  /* carousel */
+  .carousel-mobile {
+    padding: 0;
+    margin: 0;
+  }
+
+  .carousel-inner {
+    border-radius: 0;
+  }
+
+  .carousel-control-next-icon {
+    display: none;
+  }
+
+  .carousel-control-prev-icon {
+    display: none;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    background: transparent;
+
+    border: 1px solid #fff;
+  }
+
+  .carousel-indicators .active {
+    opacity: 1;
+    background: #fff;
+  }
+
+  .back-nav {
+    display: block;
+    top: 30px;
+    padding: 14px 16px;
+    position: absolute;
+    z-index: 12;
+  }
+  /* harga */
+  .harga-mobile{
+    padding: 0;
+  }
+
+  .alignment-mobile{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .harga {
+    margin-top: -32px;
+    position: relative;
+  }
+  .harga .button {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 12px 24px;
-    gap: 4px;
 
     position: fixed;
-    /* width: 328px; */
+    max-width: 92%;
     height: 48px;
     bottom: 24px;
+    left: 1rem;
     margin: 0px;
 
     background: #7126b5;
@@ -404,23 +487,59 @@ body {
     transition: none;
   }
 
-  .button:hover {
+  .harga .button:hover {
     color: #fff;
     background-color: #7f3bbf;
     border: none;
   }
 
-  .button:focus {
+  .harga .button:focus {
     color: #fff;
     background-color: #7f3bbf;
     border: none;
   }
 
-  .btn-primary:disabled {
+  .harga .button:disabled {
     color: #fff;
     background-color: #d0d0d0;
     border-color: #d0d0d0;
     opacity: 1;
+  }
+
+  /* desc */
+  .desc-mobile{
+    padding: 0 1rem;
+  }
+
+  .desc{
+    margin: auto;
+  }
+
+  /* modal */
+  .modal-dialog{
+    margin: 0;
+    bottom: 0;
+    position: fixed;
+    max-width: 100%;
+  }
+  .row-modal-item{
+    background: #fff;
+  }
+
+  .input-harga .button{
+    width: 100%;
+  }
+
+  /* alert */
+  .cust-alert{
+    width: auto;
+    height: auto;
+    margin: 1rem;
+    left: 0;
+    right: 0;
+  }
+  .cust-alert p{
+    text-align: left;
   }
 }
 @media (max-width: 400px) {

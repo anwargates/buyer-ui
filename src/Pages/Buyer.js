@@ -1,9 +1,10 @@
-import Modal from 'react-bootstrap/Modal'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './buyer.css'
 import { Button, Alert, Carousel } from 'react-bootstrap'
-import CurrencyInput from 'react-currency-input-field'
+import ModalBuyer from '../Components/Modal/ModalBuyer'
+import AlertBuyer from '../Components/Alert/AlertBuyer'
+import Navbar from '../Components/Navbar/Navbar'
 
 const Buyer = () => {
     const [show, setShow] = useState(false);
@@ -13,17 +14,8 @@ const Buyer = () => {
 
     return (
         <>
-
-            <Alert
-                className='cust-alert'
-                show={alertShow}
-                variant="success"
-                onClose={() => setAlertShow(false)}
-                dismissible>
-                <p>
-                    Harga tawarmu berhasil dikirim ke penjual
-                </p>
-            </Alert>
+        <Navbar />
+        <AlertBuyer show={alertShow} onClose={()=>setAlertShow(false)}/>
             <div class="back-nav">
                 <Link to="/"><img src="/img/fi_arrow-left.png" alt="" /></Link>
                 {/* <a href=""><img src="img/fi_arrow-left.png" alt=""></a> */}
@@ -112,71 +104,14 @@ const Buyer = () => {
                             </p>
                         </div>
                     </div>
-
                 </div>
-                <Modal
-                    show={show}
-                    onHide={() => setShow(false)}
-                    dialogClassName="modal-90w"
-                    aria-labelledby="example-custom-modal-styling-title"
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title id="example-custom-modal-styling-title">
-                            {/* <img src="/img/close.png" alt="" /> */}
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div className="col-xs-12">
-                            <div className="row-modal">
-                                <h1>
-                                    Masukkan Harga Tawarmu
-                                </h1>
-                                <p>
-                                    Harga tawaranmu akan diketahui penjual, jika penjual cocok kamu akan segera dihubungi penjual.
-                                </p>
-                            </div>
-                            <div className="row-modal-item">
-
-                                <div class="col-4 profile">
-                                    <Link to="/"><img class="" src="/img/hero.png" alt="" /></Link>
-                                </div>
-                                <div class="col-8 seller-name">
-                                    <h1>Jam Tangan Casio</h1>
-                                    <h4 class="price">Rp 250.000</h4>
-                                </div>
-                            </div>
-                            <div className="input-harga my-4">
-                                <h3>
-                                    Harga Tawar
-                                </h3>
-                                <CurrencyInput
-                                    id="input-example"
-                                    class="modal-input"
-                                    name="input-name"
-                                    placeholder="Please enter a number"
-                                    defaultValue={100}
-                                    decimalsLimit={2}
-                                    prefix='Rp. '
-                                    onValueChange={(value, name) => console.log(value, name)}
-                                />
-                                <Button className='button shadow-none button-kirim' onClick={
-                                    () => { setShow(false); setAlertShow(true); setDisable(true) }
-                                }
-                                >
-                                    <div className="btn-text">Kirim</div>
-                                </Button>
-                            </div>
-
-
-                            {/* <div className="button button-kirim">
-                            <Button onClick={AlertDismissibleExample}>
-                                Kirim
-                            </Button>
-                        </div> */}
-                        </div>
-
-                    </Modal.Body>
-                </Modal>
+                <ModalBuyer 
+                show={show} 
+                onHide={() => setShow(false) } 
+                alertOnHide= {() => setAlertShow(true)}
+                disableOnHide= {() => setDisable(true)}
+                
+                />
             </div>
 
 

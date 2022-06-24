@@ -2,20 +2,20 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './seller.css'
 import { Button, Alert, Carousel } from 'react-bootstrap'
-import ModalBuyer from '../Components/Modal/ModalBuyer'
-import AlertBuyer from '../Components/Alert/AlertBuyer'
+// import ModalBuyer from '../Components/Modal/ModalBuyer'
+// import AlertBuyer from '../Components/Alert/AlertGlobal'
 import Navbar from '../Components/Navbar/Navbar'
 
-const Buyer = () => {
-    const [show, setShow] = useState(false);
-    const [alertShow, setAlertShow] = useState(false);
-    const [disable, setDisable] = useState(false);
-    const buttonText = disable ? "Menunggu respon penjual" : "Saya Tertarik dan ingin Nego";
+const Seller = () => {
+    // const [show, setShow] = useState(false);
+    // const [alertShow, setAlertShow] = useState(false);
+    // const [disable, setDisable] = useState(false);
+    // const buttonText = disable ? "Menunggu respon penjual" : "Saya Tertarik dan ingin Nego";
 
     return (
         <>
         <Navbar />
-        <AlertBuyer show={alertShow} onClose={()=>setAlertShow(false)}/>
+        {/* <AlertBuyer show={alertShow} onClose={()=>setAlertShow(false)}/> */}
             <div class="back-nav">
                 <Link to="/"><img src="/img/fi_arrow-left.png" alt="" /></Link>
                 {/* <a href=""><img src="img/fi_arrow-left.png" alt=""></a> */}
@@ -63,14 +63,18 @@ const Buyer = () => {
                                     <h4 class="price">Rp 250.000</h4>
                                     <Button
                                         // disabled={disable}
+                                        href=''
                                         className='button shadow-none button-terbitkan'
-                                        onClick={() => setShow(true)}>
+                                        // onClick={() => setShow(true)}
+                                        >
                                         <p className='btn-text'>Terbitkan</p>
                                     </Button>
                                     <Button
                                         // disabled={disable}
+                                        href=''
                                         className='button shadow-none button-edit'
-                                        onClick={() => setShow(true)}>
+                                        // onClick={() => setShow(true)}
+                                        >
                                         <p className='btn-text'>Edit</p>
                                     </Button>
                                 </div>
@@ -111,13 +115,13 @@ const Buyer = () => {
                         </div>
                     </div>
                 </div>
-                <ModalBuyer 
+                {/* <ModalBuyer 
                 show={show} 
                 onHide={() => setShow(false) } 
                 alertOnHide= {() => setAlertShow(true)}
                 disableOnHide= {() => setDisable(true)}
                 
-                />
+                /> */}
             </div>
 
 
@@ -130,4 +134,4 @@ const Buyer = () => {
 }
 
 
-export default Buyer
+export default Seller

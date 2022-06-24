@@ -3,22 +3,30 @@ import { Link } from 'react-router-dom'
 import './buyer.css'
 import { Button, Alert, Carousel } from 'react-bootstrap'
 import ModalBuyer from '../Components/Modal/ModalBuyer'
-import AlertBuyer from '../Components/Alert/AlertBuyer'
+// import AlertBuyer from '../Components/Alert/AlertGlobal'
 import Navbar from '../Components/Navbar/Navbar'
+import AlertGlobal from '../Components/Alert/AlertGlobal'
 
 const Buyer = () => {
     const [show, setShow] = useState(false);
     const [alertShow, setAlertShow] = useState(false);
     const [disable, setDisable] = useState(false);
+
     const buttonText = disable ? "Menunggu respon penjual" : "Saya Tertarik dan ingin Nego";
+    const isiTeksAlert = "Harga tawarmu berhasil dikirim ke penjual"
+
+   
+
 
     return (
         <>
-        <Navbar />
-        <AlertBuyer show={alertShow} onClose={()=>setAlertShow(false)}/>
+            <Navbar />
+            <AlertGlobal
+                show={alertShow}
+                onClose={() => setAlertShow(false)}
+                isiTeks={isiTeksAlert} />
             <div class="back-nav">
                 <Link to="/"><img src="/img/fi_arrow-left.png" alt="" /></Link>
-                {/* <a href=""><img src="img/fi_arrow-left.png" alt=""></a> */}
             </div>
             <div class="container">
                 <div class="row">
@@ -73,7 +81,6 @@ const Buyer = () => {
                                 <div class="row seller">
                                     <div class="col-4 profile">
                                         <Link to="/"><img class="" src="/img/profile.png" alt="" /></Link>
-                                        {/* <img src="/img/profile.png" alt=""> */}
                                     </div>
                                     <div class="col-8 seller-name">
                                         <h1>Nama Penjual</h1>
@@ -105,12 +112,12 @@ const Buyer = () => {
                         </div>
                     </div>
                 </div>
-                <ModalBuyer 
-                show={show} 
-                onHide={() => setShow(false) } 
-                alertOnHide= {() => setAlertShow(true)}
-                disableOnHide= {() => setDisable(true)}
-                
+                <ModalBuyer
+                    show={show}
+                    onHide={() => setShow(false)}
+                    alertOnHide={() => setAlertShow(true)}
+                    disableOnHide={() => setDisable(true)}
+
                 />
             </div>
 

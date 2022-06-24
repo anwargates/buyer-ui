@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CardProfile.css";
 import { Card, Row, Col, Alert } from "react-bootstrap";
 
-const CardProfile = (props) => {
+const CardProfile = () => {
 
   return (
     <>

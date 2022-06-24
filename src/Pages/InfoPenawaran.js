@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarNoSearch from "../Components/Navbar/NavbarNoSearch";
 import CardProfile from "../Components/Cards/CardProfile";
 import "./InfoPenawaran.css";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { IoArrowBackOutline } from "react-icons/io5";
 import CardPenawaran from "../Components/Cards/CardPenawaran";
+import AlertGlobal from "../Components/Alert/AlertGlobal";
 
 const InfoPenawaran = () => {
+  // const [alertShow, setAlertShow] = useState(false);
+
   return (
     <>
+    {/* <AlertGlobal  /> */}
       <NavbarNoSearch />
       <Container>
         <Row>

@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
-import AlertPenawaran from '../Alert/AlertPenawaran'
+import AlertGlobal from '../Alert/AlertGlobal'
 import './ModalsTolak.css'
 
 
 
 const ModalsTolak = (props) => {
     const [alertShow, setAlertShow] = useState(false);
-    console.log(alertShow);
-
-    useEffect(() => {
-        const clearMessage = setTimeout(() => {
-            setAlertShow("");
-        }, 2000);
-        return () => clearTimeout(clearMessage);
-      }, [alertShow]);
 
     return (
         <>
-            <AlertPenawaran show={alertShow} onClose={() => setAlertShow(false)} />
+            <AlertGlobal 
+            show={alertShow} 
+            onClose={() => setAlertShow(false)} 
+            isiTeks="Status produk berhasil diperbarui"
+             />
             <Modal
-                // onHide={props.onHide}
                 {...props}
                 size="sm"
                 aria-labelledby="contained-modal-title-vcenter"

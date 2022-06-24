@@ -4,7 +4,7 @@ import { Card, Row, Col, Button } from "react-bootstrap";
 import ModalsTerima from "../Modal/ModalsTerima";
 import ModalsTolak from "../Modal/ModalsTolak";
 
-const CardPenawaran = () => {
+const CardPenawaran = (props) => {
   const [terima, setTerima] = useState(false);
   const [tolak, setTolak] = useState(false);
 

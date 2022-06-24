@@ -14,7 +14,7 @@ const CardPenawaran = () => {
         <Row className="wrapper__ g-0">
           <Col xl={2} lg={2} md={2} sm={2} className="d-block">
             <Card.Img
-              src="./Img/jam.svg"
+              src="./img/jam.svg"
               alt=""
               style={{ width: 60 }}
               className="d-flex justify-content-center "

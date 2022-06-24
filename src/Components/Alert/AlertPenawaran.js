@@ -7,13 +7,12 @@ const AlertPenawaran = (props) => {
     return (
         <>
             <Alert
+            {...props}
                 className='cust-alert'
-                show={props.show}
                 variant="success"
-                onClose={props.onClose}
                 dismissible>
                 <p>
-                    Harga tawarmu berhasil dikirim ke penjual
+                Status produk berhasil diperbarui
                 </p>
             </Alert>
         </>

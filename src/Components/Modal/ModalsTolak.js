@@ -61,9 +61,5 @@ const ModalsTolak = (props) => {
     )
 }
 
-const handleAlert = () => {
-    var hideState = this.props.onHide;
-    this.props.isTolak(hideState);
-}
 
 export default ModalsTolak

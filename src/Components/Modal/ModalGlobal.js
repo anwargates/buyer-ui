@@ -33,7 +33,7 @@ const ModalGlobal = (props) => {
                         <div className="row-modal">
                             <h1>
                                 {/* Masukkan Harga Tawarmu */}
-                                {props.headerModal}
+                                {props.titleModal}
                             </h1>
                             <p>
                                 {/* Harga tawaranmu akan diketahui penjual, jika penjual cocok kamu akan segera dihubungi penjual. */}

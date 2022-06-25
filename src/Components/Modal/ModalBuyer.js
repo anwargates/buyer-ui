@@ -3,25 +3,23 @@ import { Button, Modal } from "react-bootstrap";
 import CurrencyInput from "react-currency-input-field";
 import { Link } from "react-router-dom";
 import "./modalbuyer.css";
+import ModalR from 'rmodal-component';
+import 'rmodal-component/dist/index.css'
 
 const ModalBuyer = (props) => {
     return (
         <>
-            <Modal
+            <ModalR
             {...props}
                 // show={props}
+                smModal={true}
                 className="modal-buyer"
                 // dialogClassName="modal-90w"
-                aria-labelledby="example-custom-modal-styling-title"
+                // aria-labelledby="example-custom-modal-styling-title"
+                onClose={props.onHide}
             >
-                <Modal.Header closeButton>
-                    <Modal.Title id="example-custom-modal-styling-title">
-                        {/* <img src="/img/close.png" alt="" /> */}
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <div className="col-xs-12">
-                        <div className="row-modal">
+                    <div className="col-xs-12 modal-custom-content buyer">
+                        <div className="modal-row-title">
                             <h1>
                                 Masukkan Harga Tawarmu
                             </h1>
@@ -29,7 +27,7 @@ const ModalBuyer = (props) => {
                                 Harga tawaranmu akan diketahui penjual, jika penjual cocok kamu akan segera dihubungi penjual.
                             </p>
                         </div>
-                        <div className="row-modal-item">
+                        <div className="modal-row-item">
 
                             <div class="col-4 profile">
                                 <Link to="/"><img class="" src="/img/hero.png" alt="" /></Link>
@@ -39,7 +37,7 @@ const ModalBuyer = (props) => {
                                 <h4 class="price">Rp 250.000</h4>
                             </div>
                         </div>
-                        <div className="input-harga my-4">
+                        <div className="modal-row-harga">
                             <h3>
                                 Harga Tawar
                             </h3>
@@ -61,8 +59,7 @@ const ModalBuyer = (props) => {
                             </Button>
                         </div>
                     </div>
-                </Modal.Body>
-            </Modal>
+            </ModalR>
         </>
     )
 }

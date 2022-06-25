@@ -1,6 +1,6 @@
 /* modal desktop */
 
-.modal {
+/* .modal {
   width: 100%;
   margin: 0px;
   display: block;
@@ -8,22 +8,33 @@
 .modal-header {
   border-bottom: none;
   height: 38px;
-}
+} */
 
-.modal-dialog {
+/* .modal-dialog {
   max-width: 360px;
   max-height: 438px;
-}
+} */
 
-.modal-content {
+/* .modal-content {
   border-radius: 1rem;
 }
 
 .modal-body {
   padding: 1rem 2rem;
+} */
+.buyer{
+  display: grid;
+  gap: 16px;
 }
 
-.row-modal h1 {
+.modal-row-title, .modal-row-item, .modal-row-harga{
+  margin-left: 8px;
+  margin-right: 8px;
+  width: auto;
+  gap: 16px;
+}
+
+.modal-row-title h1 {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -31,7 +42,7 @@
   color: #000000;
 }
 
-.row-modal p {
+.modal-row-title p {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -40,13 +51,12 @@
   color: #8a8a8a;
 }
 
-.row-modal-item {
+.modal-row-item {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 16px;
-  gap: 10px;
-  width: 100%;
+  /* width: 100%; */
   height: 80px;
   background: #eeeeee;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
@@ -54,13 +64,13 @@
   align-items: stretch;
 }
 
-.row-modal-item .profile img {
+.modal-row-item .profile img {
   width: 48px;
   height: 48px;
   border-radius: 12px;
 }
 
-.input-harga {
+.modal-row-harga {
   border: none;
   box-shadow: none;
   display: flex;
@@ -101,7 +111,7 @@
   flex-grow: 0;
 }
 
-.input-harga h3 {
+.modal-row-harga h3 {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -110,12 +120,11 @@
   color: #000000;
 }
 
-.input-harga .button {
+.modal-row-harga .button {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 12px 24px;
-  gap: 4px;
   position: relative;
   width: 296px;
   height: 48px;
@@ -124,19 +133,19 @@
   margin-top: 1.5rem;
 }
 
-.input-harga .button:hover {
+.modal-row-harga .button:hover {
   color: #fff;
   background-color: #7f3bbf;
   border: none;
 }
 
-.input-harga .button:focus {
+.modal-row-harga .button:focus {
   color: #fff;
   background-color: #7f3bbf;
   border: none;
 }
 
-.input-harga .button:disabled {
+.modal-row-harga .button:disabled {
   color: #fff;
   background-color: #d0d0d0;
   border-color: #d0d0d0;
@@ -168,11 +177,11 @@
     position: fixed;
     max-width: 100%;
   }
-  .row-modal-item {
+  .modal-row-item {
     background: #fff;
   }
 
-  .input-harga .button {
+  .modal-row-harga .button {
     width: 100%;
   }
 }

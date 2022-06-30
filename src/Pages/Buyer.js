@@ -16,7 +16,7 @@ const Buyer = () => {
     const buttonText = disable ? "Menunggu respon penjual" : "Saya Tertarik dan ingin Nego";
     const isiTeksAlert = "Harga tawarmu berhasil dikirim ke penjual"
 
-    const url = 'https://finalsecondhand-staging.herokuapp.com/product/1'
+    const url = 'https://62bb2c607bdbe01d529916d4.mockapi.io/product/1'
     const [product, setProduct] = useState(null)
 
     let content = null
@@ -76,8 +76,8 @@ const Buyer = () => {
                                 <div class="col-12">
                                     <div class="row harga">
                                         <h1>
-                                            Jam Tangan Casio
-                                            {/* {product.name} */}
+                                            {/* Jam Tangan Casio */}
+                                            {product.name}
                                         </h1>
                                         <h3>Aksesoris</h3>
                                         <h4 class="price">Rp 250.000</h4>

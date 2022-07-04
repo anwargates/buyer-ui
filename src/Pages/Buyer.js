@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './buyer.css'
 import { Button, Alert, Carousel } from 'react-bootstrap'
 import ModalBuyer from '../Components/Modal/ModalBuyer'
@@ -16,7 +16,8 @@ const Buyer = () => {
     const buttonText = disable ? "Menunggu respon penjual" : "Saya Tertarik dan ingin Nego";
     const isiTeksAlert = "Harga tawarmu berhasil dikirim ke penjual"
 
-    const url = 'https://62bb2c607bdbe01d529916d4.mockapi.io/product/1'
+    const { id } = useParams()
+    const url = `https://finalsecondhand-staging.herokuapp.com/product/${id}`
     const [product, setProduct] = useState(null)
 
     let content = null
@@ -25,6 +26,8 @@ const Buyer = () => {
     useEffect(() => {
         axios.get(url).then(response => { setProduct(response.data) })
     }, [url])
+
+    // console.log(product.data)
 
     if (product) {
         content =
@@ -77,10 +80,18 @@ const Buyer = () => {
                                     <div class="row harga">
                                         <h1>
                                             {/* Jam Tangan Casio */}
-                                            {product.name}
+                                            {product.data.name}
                                         </h1>
-                                        <h3>Aksesoris</h3>
-                                        <h4 class="price">Rp 250.000</h4>
+                                        <h3>
+                                            {/* Aksesoris */}
+                                            {product.data.product_tags.map(function(tag){
+                                                return tag.category.name + ", "})}
+                                        </h3>
+                                        <h4 class="price">
+                                            {/* Rp 250.000 */}
+                                            Rp.
+                                            {product.data.price}
+                                        </h4>
                                         <Button
                                             disabled={disable}
                                             className='button shadow-none button-disable'
@@ -95,7 +106,11 @@ const Buyer = () => {
                                             <Link to="/"><img class="" src="/img/profile.png" alt="" /></Link>
                                         </div>
                                         <div class="col-8 seller-name">
-                                            <h1>Nama Penjual</h1>
+                                            <h1>
+                                                {/* Nama Penjual */}
+                                                {product.data.user.name}
+
+                                            </h1>
                                             <h3>Kota</h3>
                                         </div>
                                     </div>
@@ -105,13 +120,15 @@ const Buyer = () => {
                         <div class="col-sm-12 col-md-8 col-lg-8 g-4 desc-mobile">
                             <div class="row desc">
                                 <h1>Deskripsi</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                <p>
+                                    {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                                     culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit. Exercitationem cupiditate excepturi assumenda ipsum molestias, aut, odit quod
-                                    quibusdam quos consequuntur libero incidunt impedit, nam possimus explicabo totam quam qui tempore.
+                                    quibusdam quos consequuntur libero incidunt impedit, nam possimus explicabo totam quam qui tempore. */}
+                                    {product.data.description}
                                 </p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
